@@ -7,6 +7,15 @@
 This application aims to provide a template for building generative UI applications with LangChain Python.
 It comes pre-built with a few UI features which you can use to play about with gen ui. The UI components are built using [Shadcn](https://ui.shadcn.com/).
 
+## Architecture
+
+Some notes on the application architecture / project structure: [ARCHITECTURE.md](./ARCHITECTURE.md)
+
+## Useful links
+- https://js.langchain.com/v0.2/docs/how_to/generative_ui
+- https://langchain-ai.github.io/langgraph/
+- https://api.python.langchain.com/en/latest/community_api_reference.html
+
 ## Getting Started
 
 ### Installation
