@@ -12,6 +12,8 @@ It comes pre-built with a few UI features which you can use to play about with g
 Some notes on the application architecture / project structure: [ARCHITECTURE.md](./ARCHITECTURE.md)
 
 ## Useful links
+- API docs: http://localhost:8000/docs
+- Charts UI Demo: http://localhost:3000/charts
 - https://js.langchain.com/v0.2/docs/how_to/generative_ui
 - https://langchain-ai.github.io/langgraph/
 - https://api.python.langchain.com/en/latest/community_api_reference.html

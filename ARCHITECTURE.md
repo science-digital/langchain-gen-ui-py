@@ -13,6 +13,9 @@ The [original auther](https://github.com/bracesproul) published a 3-part youtube
 - [Part 3 - Building with LangChain Python](https://www.youtube.com/watch?v=d3uoLbfBPkw)
   - [Python Repo](https://github.com/bracesproul/gen-ui-python)
 
+## Debugging
+
+If you configure LangSmith, visit https://smith.langchain.com to see trace logs for your requests.
 
 ## Project Structure
 
