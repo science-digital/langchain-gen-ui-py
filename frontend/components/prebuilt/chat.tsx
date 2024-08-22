@@ -7,6 +7,7 @@ import { EndpointsContext } from "@/app/agent";
 import { useActions } from "@/utils/client";
 import { LocalContext } from "@/app/shared";
 import { RemoteRunnable } from "@langchain/core/runnables/remote";
+import { CSIROCard, CSIROCardLoading } from "./csiro-card";
 import { Github, GithubLoading } from "./github";
 import { Invoice, InvoiceLoading } from "./invoice";
 import { CurrentWeather, CurrentWeatherLoading } from "./weather";
@@ -44,7 +45,7 @@ export default function Chat() {
 
   const [elements, setElements] = useState<JSX.Element[]>([]);
   const [history, setHistory] = useState<[role: string, content: string][]>([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("Get me Dan Wild from CSIRO");
   const [selectedFile, setSelectedFile] = useState<File>();
 
   async function onSubmit(input: string) {
@@ -127,7 +128,7 @@ export default function Chat() {
         className="w-full flex flex-row gap-2"
       >
         <Input
-          placeholder="What's the weather like in San Francisco?"
+          placeholder="Get me Dan Wild from CSIRO (he's a real pain in the bum)"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />

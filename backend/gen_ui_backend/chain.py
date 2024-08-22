@@ -8,6 +8,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import END, StateGraph
 from langgraph.graph.graph import CompiledGraph
 
+from gen_ui_backend.tools.csiro_card import csiro_card
 from gen_ui_backend.tools.github import github_repo
 from gen_ui_backend.tools.invoice import invoice_parser
 from gen_ui_backend.tools.weather import weather_data
@@ -36,7 +37,7 @@ def invoke_model(state: GenerativeUIState, config: RunnableConfig) -> Generative
         ]
     )
     model = ChatOpenAI(model="gpt-4o", temperature=0, streaming=True)
-    tools = [github_repo, invoice_parser, weather_data]
+    tools = [github_repo, invoice_parser, weather_data, csiro_card]
     model_with_tools = model.bind_tools(tools)
     chain = initial_prompt | model_with_tools
     result = chain.invoke({"input": state["input"]}, config)
@@ -65,6 +66,7 @@ def invoke_tools(state: GenerativeUIState) -> GenerativeUIState:
         "github-repo": github_repo,
         "invoice-parser": invoice_parser,
         "weather-data": weather_data,
+        "csiro-card": csiro_card,
     }
 
     if state["tool_calls"] is not None:

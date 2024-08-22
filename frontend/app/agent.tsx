@@ -3,6 +3,7 @@ import { exposeEndpoints, streamRunnableUI } from "@/utils/server";
 import "server-only";
 import { StreamEvent } from "@langchain/core/tracers/log_stream";
 import { EventHandlerFields } from "@/utils/server";
+import { CSIROCard, CSIROCardLoading } from "@/components/prebuilt/csiro-card";
 import { Github, GithubLoading } from "@/components/prebuilt/github";
 import { InvoiceLoading, Invoice } from "@/components/prebuilt/invoice";
 import {
@@ -24,6 +25,10 @@ type ToolComponentMap = {
 };
 
 const TOOL_COMPONENT_MAP: ToolComponentMap = {
+  "csiro-card": {
+    loading: (props?: any) => <CSIROCardLoading {...props} />,
+    final: (props?: any) => <CSIROCard {...props} />,
+  },
   "github-repo": {
     loading: (props?: any) => <GithubLoading {...props} />,
     final: (props?: any) => <Github {...props} />,
