@@ -3,6 +3,7 @@ import { exposeEndpoints, streamRunnableUI } from "@/utils/server";
 import "server-only";
 import { StreamEvent } from "@langchain/core/tracers/log_stream";
 import { EventHandlerFields } from "@/utils/server";
+import { ActionSelector, ActionSelectorLoading } from "@/components/prebuilt/action-selector";
 import { CSIROCard, CSIROCardLoading } from "@/components/prebuilt/csiro-card";
 import { Github, GithubLoading } from "@/components/prebuilt/github";
 import { InvoiceLoading, Invoice } from "@/components/prebuilt/invoice";
@@ -25,6 +26,10 @@ type ToolComponentMap = {
 };
 
 const TOOL_COMPONENT_MAP: ToolComponentMap = {
+  "action-selector": {
+    loading: (props?: any) => <ActionSelectorLoading {...props} />,
+    final: (props?: any) => <ActionSelector {...props} />,
+  },
   "csiro-card": {
     loading: (props?: any) => <CSIROCardLoading {...props} />,
     final: (props?: any) => <CSIROCard {...props} />,

@@ -6,7 +6,6 @@ Steps to add a new (STATIC) tool to the Gen UI application:
 
 - Add UI template to the `components/prebuilt` directory (ensure any `shadcn` deps also installed).
 - Add the template to the `TOOL_COMPONENT_MAP` in `app/agent.tsx`
-- Import template into `components/prebuilt/chat.tsx`
 
 
 #### Backend
